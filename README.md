@@ -138,13 +138,13 @@ jupyter notebook Evluation.ipynb
 
 - **Author:** Cheng Wang (UNSW)
 - **Supervisor:** Dr. Rohitash Chandra (UNSW)
-- **Co-supervisor:** Dr. Ehsan Farahbakhsh
+- **Co-supervisor:** Dr. Ehsan Farahbakhsh (USYD)
 - **Industry Collaborator:** Sam Johnson (Datarock)
 
 ## Contact
 
 For questions or collaboration opportunities:
-- Email: [z5042599@unsw.edu.au]
+- Email: [victorwang1995@hotmail.com]
 - GitHub: [@Vi90195]
 
 ## Acknowledgments
