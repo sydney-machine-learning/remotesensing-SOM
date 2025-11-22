@@ -13,7 +13,7 @@ This repository contains the implementation code for a thesis comparing four mac
 
 **Research Focus:** Identifying Kanimblan metamorphic unit boundaries for gold exploration in the Tibooburra region.
 
-## 📁 Repository Structure
+## Repository Structure
 ```
 .
 ├── SimpleTut/                    # Tutorial folder with basic SOM examples
@@ -28,7 +28,7 @@ This repository contains the implementation code for a thesis comparing four mac
 └── README.md                    # This file
 ```
 
-## 🔧 Requirements
+## Requirements
 ```bash
 # Core libraries
 numpy
