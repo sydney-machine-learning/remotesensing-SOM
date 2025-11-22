@@ -2,7 +2,7 @@
 
 A comparative study of topology-preserving (Self-Organizing Maps) versus non-topology-preserving methods (k-means with dimensionality reduction) for hyperspectral geological mapping in the Tibooburra region, NSW, Australia.
 
-## 📋 Project Overview
+## Project Overview
 
 This repository contains the implementation code for a thesis comparing four machine learning approaches for processing EnMAP hyperspectral satellite data:
 
