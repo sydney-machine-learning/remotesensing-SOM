@@ -1,4 +1,4 @@
-# Unsupervised Learning Using SOM for Remote Sensing Mineral Prospectivity
+# SOM-RS: Self-Organising Maps for hyperspectral remote sensing for mineral exploration
 
 A comparative study of topology-preserving (Self-Organizing Maps) versus non-topology-preserving methods (k-means with dimensionality reduction) for hyperspectral geological mapping in the Tibooburra region, NSW, Australia.
 
