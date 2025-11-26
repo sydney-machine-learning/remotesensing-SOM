@@ -1,4 +1,4 @@
-# SOM-RS: Self-Organising Maps for hyperspectral remote sensing for mineral exploration
+# SOM-Exp: Self-Organising Maps For Hyperspectral Remote Sensing-Based Mineral Exploration
 
 A comparative study of topology-preserving (Self-Organizing Maps) versus non-topology-preserving methods (k-means with dimensionality reduction) for hyperspectral geological mapping in the Tibooburra region, NSW, Australia.
 
