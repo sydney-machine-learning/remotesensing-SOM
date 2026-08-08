@@ -1,0 +1,25 @@
+# Virtual environment
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Method outputs / generated artifacts
+outputs/
+Figures/
+*.npy
+
+# Large EnMAP dataset - downloaded separately
+ENMAP01-*/
+Datasets/ENMAP01-*/
+Datasets/*SPECTRAL_IMAGE.TIF
+
+# Generated geology reference
+geology_reference_from_polygons.tif
+
+# OS / editor junk
+.DS_Store
+.ipynb_checkpoints/
