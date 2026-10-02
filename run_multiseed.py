@@ -28,9 +28,11 @@ def score_common(X_ch, l_ch, X_sil, l_sil):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--seeds", type=int, default=5)
+    ap.add_argument("--seeds", type=int, default=30)
     ap.add_argument("--skip-sa", action="store_true",
                     help="skip the stacked AE (slowest method)")
+    ap.add_argument("--only", nargs="+",
+                    help='run only these methods, e.g. --only "k-means + CA"')
     args = ap.parse_args()
     seeds = [config.SEED + i for i in range(args.seeds)]
 
@@ -55,6 +57,8 @@ def main():
     }
     if not args.skip_sa:
         methods["k-means + SA"] = lambda s: train_sa(X, seed=s)[0]
+    if args.only:
+        methods = {k: v for k, v in methods.items() if k in args.only}
 
     config.FIGURES_DIR.mkdir(exist_ok=True)
     out = config.FIGURES_DIR / "multiseed_results.csv"
@@ -71,6 +75,13 @@ def main():
             t0 = time.time()
             seed_everything(s)
             lab = fn(s)
+            # A collapsed model (e.g. autoencoder latent stuck at one point)
+            # yields a single cluster; skip it rather than crash the run.
+            if len(np.unique(lab[sil_idx])) < 2:
+                print(f"  {name:15s} seed={s}  COLLAPSED (1 cluster) - skipped",
+                      flush=True)
+                gc.collect()
+                continue
             labels_per_seed.append(lab)
             m = score_common(Xs, lab[idx], Xsil, lab[sil_idx])
             m["n_clusters"] = int(len(np.unique(lab)))
@@ -92,7 +103,8 @@ def main():
                 for a, b in itertools.combinations(labels_per_seed, 2)]
         rows[name]["Stability (mean pairwise ARI)"] = float(np.mean(aris))
         rows[name]["Stability std"] = float(np.std(aris, ddof=1)) if len(aris) > 1 else 0.0
-        rows[name]["n_seeds"] = len(seeds)
+        rows[name]["n_seeds"] = len(labels_per_seed)
+        rows[name]["n_collapsed"] = len(seeds) - len(labels_per_seed)
         stability[name] = aris
         print(f"  {name:15s} STABILITY mean pairwise ARI = {np.mean(aris):.4f}\n", flush=True)
 
