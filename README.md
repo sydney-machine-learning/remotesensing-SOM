@@ -207,6 +207,10 @@ structurally biased: k-means winning is close to a tautology, not evidence of
 better geology. `run_matched_k_comparison.py` removes the feature-space and
 cluster-count confounds; `src/som_metrics.py` supplies the SOM's own scoreboard.
 
+## Paper Citation
+
+Cheng Wang, Ayush Bansal, Ehsan Farahbakhsh, and Rohitash Chandra (2026). *SOM-Gold: Comparative Representation Learning Framework for Hyperspectral Mineral Exploration*. **Under review.**
+
 ## Contributors
 
 - **Author:** Cheng Wang (UNSW)
